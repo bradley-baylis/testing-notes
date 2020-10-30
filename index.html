@@ -17,8 +17,8 @@
     <h2>What is testing and why do we do it?</h2>
 
     <p>Put simply, testing is the process of confirming that something is working as intended.  It is typical in any creation process,
-      for example a chef may taste or her soup to decide whether it tastes as they hoped or whether it needs more seasoning.  Software
-      development in particular benefits from testing, because unlike cooking it rarely follows a a very rigid process and unlike and the
+      for example a chef may taste his or her soup to decide whether it tastes as they hoped or whether it needs more seasoning.  Software
+      development in particular benefits from testing, because unlike cooking it rarely follows a very rigid process and the
       end result can take many different forms.
     </p>
 
@@ -32,19 +32,19 @@
       </li>
       <li>It can help you understand the requirements of the software better</li>
       <li>Automated tests can function as documentation</li>
-      <li>Manula testing can lead to human error</li>
+      <li>Manual testing can lead to human error</li>
     </ul>
 
     <h2>Testing Methods</h2>
 
-    <p>The most common form og testing is one that everyone will have done in some context during their life and that is manual testing.
+    <p>The most common form of testing is one that everyone will have done in some context during their life and that is manual testing.
       For us that would likely involve running through our applications flow and checking it all works properly, manually clicking through 
       as the user would.</p>
     
-    <p>This is good for smaller projects as creating automated tests is a lot of potential overhead for little gain 
-      when it can be easily covered manually.  In other words, it would be overkill. However, manual testing doesn't scale very well and 
-      as the application grows manual testing can be extremely time-consuming.  It also becomes more and more likely that human error can 
-      occur during testing, especially because it can become quite tedious and minds can wander.
+    <p>This is good for smaller projects as creating automated tests is a lot of potential overhead for little gain when it can be easily 
+      covered manually.  In other words, it would be overkill. However, manual testing doesn't scale very well and as the application 
+      grows manual testing can be extremely time-consuming.  It also becomes more and more likely that human error can occur during testing,
+      especially because it can become quite tedious and minds can wander.
     </p>
 
     <h3>Functional Testing</h3>
@@ -52,19 +52,19 @@
     <h4>Unit testing</h4>
 
     <p>Unit testing is the most granular form of testing and is very narrow in scope.  A unit test tests one specific piece of 
-      functionality, often a literal function.  This functionality will be isolateed from the rest of the code and ensure that it performs
-      it's singular job and is unconcerned with the how it fits into the rest of the code.  Unit testing is the base level of testing that
+      functionality, often a literal function.  This functionality will be isolated from the rest of the code and ensure that it performs
+      its singular job and is unconcerned with the how it fits into the rest of the code.  Unit testing is the base level of testing that
       everything else is built upon.  
     </p>
 
     <h4>Integration testing</h4>
 
     <p>Once you have a good amount of unit test coverage and can be confident that the your base units of functionality are working, you
-      can make sure they play nicely together.  These tests are combining our simple functionalities together to create something more
-      complex and probably more useful.  For example, if you have made a calculator program, you could have unit tests to ensure
+      can make sure they play nicely together.  We combine our simple functionalities together to create a more complex and 
+      probably more useful feature then test that feature.  For example, if you have made a calculator program, you could have unit tests to ensure
       the different math functions like add and subtract are working, then integration tests could ensure that sums that combine these 
       different functions still result in a correct answer.  At this stage, we are often testing a single feature of our application 
-      isolated.
+      isolated from the rest of the codebase.
     </p>
 
     <p>Some different ways to perform integration testing are:</p>
@@ -102,8 +102,8 @@
     <h4>Performance tests</h4>
 
     <p>If we have performed at the very least the first few testing stages, we will now be confident that we have working software of 
-      some sort.  We can now test whether are aplication can continue to perform this function well under the pressure of a many users.
-      This can take a few different forms as outlined below.  All of them involve the application experiencing high traffic.
+      some sort.  We can now test whether are aplication can continue to perform its functions well under the pressure of heavy traffic.
+      This can take a few different forms as outlined below.
     </p>
 
     <ul>
@@ -117,7 +117,7 @@
     <h4>Security tests</h4>
 
     <p>Security testing involves looking for security vunerabilities in your software.  Some common vunerabilities could be SQL injections,
-      famously allowing malicious users to enter sql commands into an unsanitised input with disasterous results such as user tables being 
+      famously allowing malicious users to enter SQL commands into an unsanitised input with disasterous results such as user tables being 
       dropped.  Similarly, Javascript injections can also happen in the same way causing the application to run unintended code, which in 
       turn could give attacks useful information.  Code injections aren't limited to these two languages.
     </p>
