@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Testing Notes</title>
+  <meta name="description" content="Testing Notes">
+  <meta name="author" content="Bradley Baylis">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class = "container">
+    <h1 class = "text-center">Testing Notes</h1>
+
+    <h2>What is testing and why do we do it?</h2>
+
+    <p>Put simply, testing is the process of confirming that something is working as intended.  It is typical in any creation process,
+      for example a chef may taste or her soup to decide whether it tastes as they hoped or whether it needs more seasoning.  Software
+      development in particular benefits from testing, because unlike cooking it rarely follows a a very rigid process and unlike and the
+      end result can take many different forms.
+    </p>
+
+    <p>The why of testing is that we want our to ensure our software works and if does, that it has all of the features that we had in mind
+      when we started.  On top of that, successful testing during the development process can give us confidence that we are headed in the
+      right direction and that we haven't broken something that was working earlier.
+    </p>
+
+    <h2>Testing Methods</h2>
+
+    <p>The most common form og testing is one that everyone will have done in some context during their life and that is manual testing.
+      For us that would likely involve running through our applications flow and checking it all works properly, manually clicking through 
+      as the user would.</p>
+    
+    <p>This is good for smaller projects as creating automated tests is a lot of potential overhead for little gain 
+      when it can be easily covered manually.  In other words, it would be overkill. However, manual testing doesn't scale very well and 
+      as the application grows manual testing can be extremely time-consuming.  It also becomes more and more likely that human error can 
+      occur during testing, especially because it can become quite tedious and minds can wander.
+    </p>
+
+    <h3>Functional Testing</h3>
+
+    <h4>Unit testing</h4>
+
+    <p>Unit testing is the most granular form of testing and is very narrow in scope.  A unit test tests one specific piece of 
+      functionality, often a literal function.  This functionality will be isolateed from the rest of the code and ensure that it performs
+      it's singular job and is unconcerned with the how it fits into the rest of the code.  Unit testing is the base level of testing that
+      everything else is built upon.  
+    </p>
+
+    <h4>Integration testing</h4>
+
+    <p>Once you have a good amount of unit test coverage and can be confident that the your base units of functionality are working, you
+      can make sure they play nicely together.  These tests are combining our simple functionalities together to create something more
+      complex and probably more useful.  For example, if you have made a calculator program, you could have unit tests to ensure
+      the different math functions like add and subtract are working, then integration tests could ensure that sums that combine these 
+      different functions still result in a correct answer.  At this stage, we are often testing a single feature of our application 
+      isolated.
+    </p>
+
+    <h4>System testing</h4>
+
+    <p>The next step up from integration testing is system testing.  Previously, with unit and integration testing we have been isolating
+      the code we're testing from the rest of our codebase, but system testing now concerns our whole application.  It is a black box 
+      testing method, because it isn't concerned about how the application does its job, it only cares whether the job is done.  
+    </p>
+
+    <h4>Acceptance testing</h4>
+
+    <p>Now we're sure the application is doing something correctly, we need to also make sure the application fulfills the initial 
+      requirements or if the focus of the application has drifted away during development. After all, we wouldn't want coffee machine 
+      software that only makes a cup of tea, no matter how reliably it makes that tea (or if the tea is any good).
+    </p>
+
+    <h3>Non-functional Testing</h3>
+    
+    <h4>Performance tests</h4>
+
+    <p>If we have performed at the very least the first few testing stages, we will now be confident that we have working software of 
+      some sort.  We can now test whether are aplication can continue to perform this function well under the pressure of a many users.
+      This can take a few different forms as outlined below.  All of them involve the application experiencing high traffic.
+    </p>
+
+    <ul>
+      <li>Load testing - Does it still work for an amount of requests that we consider acceptable?</li>
+      <li>Stress testing - </li>
+      <li>Endurance (soak) testing </li>
+      <li>Spike testing</li>
+    </ul>
+
+Security testing
+
+Usability Testing 
+
+Compatibility Testing
+
+
+    
+    <div class = "row">
+      <div class = "col-xs-12 col-sm-4">
+        <figure class = "figure">
+          <a href = "rebase-example initial.png">
+            <img src="rebase-example initial mobile.png" class = "example-img" alt = "Rebase example initial state diagram">
+          </a>
+          <figcaption class = "figure-caption">In this example, we want to rebase commits C6 and C7, so they they are appended to 
+            <code>branch2</code>.
+          </figcaption>
+        </figure>
+      </div>
+      <div class = "col-xs-12 col-sm-4">
+        <figure class = "figure">
+          <a href = "rebase-example mid-point.png">
+            <img src="rebase-example mid-point mobile.png" class = "example-img" alt = "Rebase example mid-point state diagram">
+          </a>
+          <figcaption class = "figure-caption">We use <code>git rebase branch2</code> to achieve this.  We don't need to include <code>master
+            </code> at the end, because we already have <code>master</code> checked out.
+          </figcaption>
+        </figure>
+      </div>
+      <div class = "col-xs-12 col-sm-4">
+        <figure class = "figure">
+          <a href = "rebase-example end.png">
+            <img src="rebase-example end mobile.png" class = "example-img" alt = "Rebase example end state diagram">
+          </a>            
+          <figcaption class = "figure-caption">Finally, we use <code>git rebase master branch2</code> to move <code>branch2</code>'s pointer
+            to the same commit as <code>master</code>.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <h3>Example use-cases for use cherry-picking or rebasing</h3>
+    <p>Edit an old commit:</p>
+    <ul>
+      <li>Rebase method
+        <ol>
+          <li><code>git rebase -i</code> to make old commit most recent</li> 
+          <li>Make the changes and stage them</li>
+          <li><code>git commit --amend</code></li>
+          <li><code>git rebase -i</code> again to put commit back in its original location</li>
+        </ol>
+      </li>
+      <li>Cherry-pick method
+        <ol>
+          <li><code>git cherry-pick &lt;commit-to-be-edited&gt;</code></li> 
+          <li>Make the changes and stage them</li>
+          <li><code>git commit --amend</code></li>
+          <li><code>git rebase</code> or <code>git cherry-pick</code> the commits that came after</li>
+        </ol>
+      </li>
+    </ul>
+    <p>Erase debug commits:</p>
+    <ul>
+      <li>Rebase method
+        <ol>
+          <li><code>git rebase -i</code> and simply remove intermediate commits</li>
+        </ol>
+      </li>
+      <li>Cherry-pick method
+        <ol>
+          <li><code>git checkout &lt;original-branch&gt;</code></li> 
+          <li><code>git cherry-pick &lt;finished-commit&gt;</code></li>
+        </ol>
+      </li>
+    </ul>
+    <footer class = "d-flex justify-content-center align-items-center">Bradley Baylis &copy; 2020</footer>  
+  </body>
+</html>

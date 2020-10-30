@@ -1,0 +1,35 @@
+body {
+    background-color: #eee;
+}
+
+h1 {
+    margin: 3rem auto;
+}
+
+h2 {
+    margin: 1.5rem auto;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+figcaption {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.flag-list {
+    list-style-type: none;
+}
+
+.example-img {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    height: 150px;
+}
