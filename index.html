@@ -22,10 +22,18 @@
       end result can take many different forms.
     </p>
 
-    <p>The why of testing is that we want our to ensure our software works and if does, that it has all of the features that we had in mind
-      when we started.  On top of that, successful testing during the development process can give us confidence that we are headed in the
-      right direction and that we haven't broken something that was working earlier.
-    </p>
+    <h2>Why test?</h2>
+
+    <p>The main reason is simply to find bugs.  However, automated tests in particular bring more advantages:</p>
+
+    <ul>
+      <li>Discovering bugs quickly after they are introduced, which leads to bring able to change code with confidence, knowing you won't
+        accidently break somthing
+      </li>
+      <li>It can help you understand the requirements of the software better</li>
+      <li>Automated tests can function as documentation</li>
+      <li>Manula testing can lead to human error</li>
+    </ul>
 
     <h2>Testing Methods</h2>
 
@@ -59,6 +67,22 @@
       isolated.
     </p>
 
+    <p>Some different ways to perform integration testing are:</p>
+
+    <ul>
+      <li>Big bang - All units are integrated together and tested simultaneously as opposed to starting with one unit and adding 
+        additional units one at a time.  It differs from system testing because it only tests the interactions between the units
+        rather than the whole system.
+      </li>
+      <li>Top down - The units are ordered by priority and then, starting with the highest priority unit and moving down, are integrated
+        together and tested.
+      </li>
+      <li>Bottom up - The same as top down testing except you begin with the lowest priority unit.</li>
+      <li>Sandwich/hybrid - Performing both the top down and bottom up approaches, so you can compare them and make sure the results are
+        consistant.
+      </li>
+    </ul>
+
     <h4>System testing</h4>
 
     <p>The next step up from integration testing is system testing.  Previously, with unit and integration testing we have been isolating
@@ -84,20 +108,40 @@
 
     <ul>
       <li>Load testing - Does it still work for an amount of requests that we consider acceptable?</li>
-      <li>Stress testing - </li>
-      <li>Endurance (soak) testing </li>
-      <li>Spike testing</li>
+      <li>Stress testing - How does it cope when the amount of requests is even higher than our target acceptable traffic level?</li>
+      <li>Endurance (soak) testing - How long can it cope with being above the target acceptable traffic level?</li>
+      <li>Spike testing - How does it cope with being above the target acceptable traffic level when the traffic all comes within a
+        short period?</li>
     </ul>
 
-Security testing
+    <h4>Security tests</h4>
 
-Usability Testing 
+    <p>Security testing involves looking for security vunerabilities in your software.  Some common vunerabilities could be SQL injections,
+      famously allowing malicious users to enter sql commands into an unsanitised input with disasterous results such as user tables being 
+      dropped.  Similarly, Javascript injections can also happen in the same way causing the application to run unintended code, which in 
+      turn could give attacks useful information.  Code injections aren't limited to these two languages.
+    </p>
 
-Compatibility Testing
+    <h4>Usability tests</h4>
+
+    <p>Usability tests ensure that the differnets paths through the website are as intuitive as possible for the end user.</p>
+
+    <h4>Compatibility tests</h4>
+
+    <p>Compatibility tests ensure that the application works consistantly in all environments it uses, whether that be different browsers
+      or different operating systems.
+    </p>
+
+    <h2>White box and black box testing</h2>
+
+    <p>White box testing is testing that is concerned with the internals of the codebase.  Black box testing is the opposite where it
+      is only concerned with testing the functionality, which could also be considered as testing from the end user's perspective.  You
+      could summarise the difference as white box testng being about the how and black box testing being about the what.
+    </p>
 
 
     
-    <div class = "row">
+    <!--<div class = "row">
       <div class = "col-xs-12 col-sm-4">
         <figure class = "figure">
           <a href = "rebase-example initial.png">
@@ -163,7 +207,7 @@ Compatibility Testing
           <li><code>git cherry-pick &lt;finished-commit&gt;</code></li>
         </ol>
       </li>
-    </ul>
+    </ul>-->
     <footer class = "d-flex justify-content-center align-items-center">Bradley Baylis &copy; 2020</footer>  
   </body>
 </html>
